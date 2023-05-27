@@ -6,18 +6,21 @@ class Tag extends Model {}
 
 Tag.init(
   {
+
     // define columns
     id: {
       type: DataTypes.INTEGER,
-      autoIncrement: true,
       allowNull: false,
       primaryKey: true,
+      autoIncrement: true
     },
+
+    // will be used in ProductTag js file
     tag_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: DataTypes.STRING
     }
   },
+
   {
     sequelize,
     timestamps: false,

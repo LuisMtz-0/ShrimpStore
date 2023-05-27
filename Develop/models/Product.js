@@ -10,26 +10,29 @@ class Product extends Model {}
 Product.init(
   {
     // define columns
+
+    // CODE TO CREATE THE INITIAL PRODUCT MODEL - CAN BE EXTENDED and expanded upon
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      alowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    product_Name: {
+
+    product_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // will keep track of the quantity and can only be full digits
+
     stock: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 30,
+      defaultValue: 10,
       validate: {
-         isNumeric: true,
+        isNumeric: true,
       }
     },
-    // price for each product that can have decimals
+
     price: {
       type: DataTypes.DECIMAL,
       allowNull: false,
@@ -37,16 +40,20 @@ Product.init(
         isDecimal: true,
       }
     },
-    // will link to the category model
+
     category_id: {
       type: DataTypes.INTEGER,
+
+      // setting allowNull to TRUE allows us to delete a category - setting to false for stock, price, product_name, and of course Id
       allowNull: true,
+
       references: {
         model: "category",
         key: "id",
-      },
+      }
     }
   },
+  
   {
     sequelize,
     timestamps: false,
