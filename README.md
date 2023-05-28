@@ -17,7 +17,8 @@ An E-comers store that allows the user to access many databases while linking th
 
 ## Usage
 
-- video goes here
+Link To Video: https://drive.google.com/file/d/178xPNecNZRfVJYd5ddU67W-WMrpnSH14/view
+
 
 ## Credits
 
